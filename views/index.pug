@@ -1,5 +1,61 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  input#pop(hidden, value=pop)
+  div.container.admin(style='margin-top: 50px')
+    ul.nav.nav-tabs#myTab(role="tablist")
+      li.nav-item
+        a.nav-link.active#rooms-tab(data-toggle="tab" href="#rooms" role="tab" aria-controls="rooms" aria-selected="true") Население год/регионы
+      li.nav-item
+        a.nav-link#clients-tab(data-toggle="tab" href="#clients" role="tab" aria-controls="clients" aria-selected="false") Рождаемость по годам
+      li.nav-item
+        a.nav-link#bookings-tab(data-toggle="tab" href="#bookings" role="tab" aria-controls="bookings" aria-selected="false") ***
+
+    #myTabContent.tab-content(style='margin-top: 30px')
+      #rooms.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='rooms-tab')
+        .row
+          .col-md-9
+              #population-donut-chart(style="width: 900px, height: 500px")
+          .col-md-3(style="margin-top:20px")
+            label(for="selectYear") Выберите год:
+            select#selectYear.btn.btn-warning.ml-3
+              option#1999 1999
+              option#2000 2000
+              option#2001 2001
+              option#2002 2002
+              option#2003 2003
+              option#2004 2004
+              option#2005 2005
+              option#2006 2006
+              option#2007 2007
+              option#2008 2008
+              option#2009 2009
+            label(for="regions" style="margin-top: 30px") Укажите регионы:
+            div#regions
+              div
+                input#check0.chech_page1(checked type="checkbox")
+                label.ml-3(for="check0") New South Wales
+              div
+                input#check1.chech_page1(checked type="checkbox")
+                label.ml-3(for="check1") Victoria
+              div
+                input#check2.chech_page1(checked type="checkbox")
+                label.ml-3(for="check2") Queensland
+              div
+                input#check3.chech_page1(checked type="checkbox")
+                label.ml-3(for="check3") South Australia
+              div
+                input#check4.chech_page1(checked type="checkbox")
+                label.ml-3(for="check4") Western Australia
+              div
+                input#check5.chech_page1(checked type="checkbox")
+                label.ml-3(for="check5") Tasmania
+              div
+                input#check6.chech_page1(checked type="checkbox")
+                label.ml-3(for="check6") Northern Territory
+              div
+                input#check7.chech_page1(checked type="checkbox")
+                label.ml-3(for="check7") Australian Capital Territory
+
+
+      #clients.tab-pane(role='tabpanel', aria-labelledby='clients-tab')

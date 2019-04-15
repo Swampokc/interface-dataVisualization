@@ -6,15 +6,17 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   body
     #header.row
-      .offset-1.col-md-1
+      .offset-1.col-md-1(style="margin-top:20px")
         img(src='images/logo-min.png', alt='Kangaroo')
-      .offset-1.col-md-9
+      .offset-1.col-md-9(style="margin-top: 70px")
         h1 Births, Australia, 1999 — 2009
 
 
     block content
 
+
     script(type="text/javascript" src="/javascripts/jquery.min.js")
     script(type="text/javascript" src="/javascripts/bootstrap.min.js")
     script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+    script(type="text/javascript" src="/javascripts/population-donut-chart.js")
 

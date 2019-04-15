@@ -38,7 +38,7 @@ var Year = sequelize.define('year', {
     },
 });
 
-var Value = sequelize.define('value', {
+var Population = sequelize.define('population', {
     id: {
         autoIncrement: true,
         primaryKey: true,
@@ -58,16 +58,16 @@ var Value = sequelize.define('value', {
     }
 });
 
-Region.hasMany(Value,{foreignKey:'regionFK', sourceKey:'id'});
-Value.belongsTo(Region,{foreignKey:'regionFK', targetKey:'id'});
+Region.hasMany(Population,{foreignKey:'regionFK', sourceKey:'id'});
+Population.belongsTo(Region,{foreignKey:'regionFK', targetKey:'id'});
 
-Year.hasMany(Value,{foreignKey:'yearFK', sourceKey:'id'});
-Value.belongsTo(Year,{foreignKey:'yearFK', targetKey:'id'});
+Year.hasMany(Population,{foreignKey:'yearFK', sourceKey:'id'});
+Population.belongsTo(Year,{foreignKey:'yearFK', targetKey:'id'});
 
 sequelize.sync();
 
 module.exports.Region = Region;
 module.exports.Year = Year;
-module.exports.Value = Value;
+module.exports.Population = Population;
 
 module.exports.sequelize = sequelize;
