@@ -5,33 +5,31 @@ block content
   div.container.admin(style='margin-top: 50px')
     ul.nav.nav-tabs#myTab(role="tablist")
       li.nav-item
-        a.nav-link.active#rooms-tab(data-toggle="tab" href="#rooms" role="tab" aria-controls="rooms" aria-selected="true") Население год/регионы
+        a.nav-link.active#popul-tab(data-toggle="tab" href="#popul" role="tab" aria-controls="popul" aria-selected="true") Население год/регионы
       li.nav-item
-        a.nav-link#clients-tab(data-toggle="tab" href="#clients" role="tab" aria-controls="clients" aria-selected="false") Рождаемость по годам
-      li.nav-item
-        a.nav-link#bookings-tab(data-toggle="tab" href="#bookings" role="tab" aria-controls="bookings" aria-selected="false") ***
+        a.nav-link#birth-tab(data-toggle="tab" href="#birth" role="tab" aria-controls="birth" aria-selected="false") Рождаемость по годам
 
     #myTabContent.tab-content(style='margin-top: 30px')
-      #rooms.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='rooms-tab')
+      #popul.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='popul-tab')
         .row
           .col-md-9
               #population-donut-chart(style="width: 900px, height: 500px")
           .col-md-3(style="margin-top:20px")
-            label(for="selectYear") Выберите год:
-            select#selectYear.btn.btn-warning.ml-3
-              option#1999 1999
-              option#2000 2000
-              option#2001 2001
-              option#2002 2002
-              option#2003 2003
-              option#2004 2004
-              option#2005 2005
-              option#2006 2006
-              option#2007 2007
-              option#2008 2008
-              option#2009 2009
-            label(for="regions" style="margin-top: 30px") Укажите регионы:
-            div#regions
+            label(for="selectYearPop") Выберите год:
+            select#selectYearPop.btn.btn-warning.ml-3
+              option 1999
+              option 2000
+              option 2001
+              option 2002
+              option 2003
+              option 2004
+              option 2005
+              option 2006
+              option 2007
+              option 2008
+              option 2009
+            label(for="r1" style="margin-top: 30px") Укажите регионы:
+            div#r1
               div
                 input#check0.chech_page1(checked type="checkbox")
                 label.ml-3(for="check0") New South Wales
@@ -58,4 +56,64 @@ block content
                 label.ml-3(for="check7") Australian Capital Territory
 
 
-      #clients.tab-pane(role='tabpanel', aria-labelledby='clients-tab')
+      #birth.tab-pane(role='tabpanel', aria-labelledby='birth-tab')
+        .row
+          .col-md-12
+            #birthrate-area-chart(style="width: 900px, height: 500px")
+        .row
+          .col-md-3
+              label(for="selectYearFrom") Выберите год:
+                select#selectYearFrom.selectYearBirth.btn.btn-warning.ml-3
+                  option(value="1999") 1999
+                  option(value="2000") 2000
+                  option(value="2001") 2001
+                  option(value="2002") 2002
+                  option(value="2003") 2003
+                  option(value="2004") 2004
+                  option(value="2005") 2005
+                  option(value="2006") 2006
+                  option(value="2007") 2007
+                  option(value="2008") 2008
+          .col-md-3
+            label(for="selectYearTo") до:
+              select#selectYearTo.selectYearBirth.btn.btn-warning.ml-3
+                option(value="2000") 2000
+                option(value="2001") 2001
+                option(value="2002") 2002
+                option(value="2003") 2003
+                option(value="2004") 2004
+                option(value="2005") 2005
+                option(value="2006") 2006
+                option(value="2007") 2007
+                option(value="2008") 2008
+                option(value="2009") 2009
+          .col-md-6
+            label(for="r2") Укажите регионы:
+            div#r2
+              .row
+                div
+                  input#check-area1.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area1") New South Wales
+                div
+                  input#check-area2.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area2") Victoria
+                div
+                  input#check-area3.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area3") Queensland
+              .row
+                div
+                  input#check-area4.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area4") South Australia
+                div
+                  input#check-area5.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area5") Western Australia
+                div
+                  input#check-area6.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area6") Tasmania
+              .row
+                div
+                  input#check-area7.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area7") Northern Territory
+                div
+                  input#check-area8.chech_page2.ml-3(checked type="checkbox")
+                  label.ml-3(for="check-area8") Australian Capital Territory
