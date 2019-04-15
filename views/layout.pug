@@ -3,5 +3,18 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
   body
+    #header.row
+      .offset-1.col-md-1
+        img(src='images/logo-min.png', alt='Kangaroo')
+      .offset-1.col-md-9
+        h1 Births, Australia, 1999 — 2009
+
+
     block content
+
+    script(type="text/javascript" src="/javascripts/jquery.min.js")
+    script(type="text/javascript" src="/javascripts/bootstrap.min.js")
+    script(type="text/javascript" src="https://www.gstatic.com/charts/loader.js")
+
